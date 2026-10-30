@@ -171,27 +171,7 @@ def check_minor_blood(recipient, donor):
     return True
 
 
-# 3.4: Filter component-matched donors by ABO and Rh
-def find_matching_donors(request):
-    recipient, component_matches = find_matching_component(request)
-    matching_donors = []
-
-    for donor in component_matches:
-        if not check_abo(recipient, donor):
-            continue
-        if not check_rh(recipient, donor):
-            continue
-        if donor.component_type in [
-            "Packed Red Cell",
-            "Red Cell Leucocyte Depleted",
-            "Washed Red Cell Leucocyte Depleted" ]:
-            if not check_minor_blood(recipient, donor):
-                continue
-        matching_donors.append(donor)
-
-    return recipient, matching_donors
-
-# 3.5: Check emergency
+# STEP 4: Check emergency
 def check_emergency(request, recipient):
     red_cell_types = [
         "Packed Red Cell",
@@ -223,9 +203,47 @@ def check_emergency(request, recipient):
 
     raise ValueError(f"Unknown urgency: {request.emergency}")
 
+# STEP 5: Find matching
+def find_matching_donors(request):
+    recipient, component_matches = find_matching_component(request)
+    
+    policy = check_emergency(request,recipient)
+    matching_donors = []
 
-# STEP 4: Check availability
-# 4.1 Calculate expiry date
+    red_cell_types = [
+        "Packed Red Cell",
+        "Red Cell Leucocyte Depleted",
+        "Washed Red Cell Leucocyte Depleted"]
+
+    for donor in component_matches:
+        if policy == "emergency_O_negative":
+            if donor.major_blood != "O-":
+                continue
+        elif policy == "emergency_O_positive":
+            if donor.major_blood != "O+":
+                continue
+        elif policy == "confirmed_group_specific":
+            # Match the recipient's recorded ABO and Rh exactly.
+            if donor.major_blood != recipient.major_blood:
+                continue
+        else:
+            # Standard matching for other requests.
+            if not check_abo(recipient, donor):
+                continue
+
+            if not check_rh(recipient, donor):
+                continue
+        
+        # Check recorded antibodies for all red-cell candidates.
+        if donor.component_type in red_cell_types:
+            if not check_minor_blood(recipient, donor):
+                continue
+        matching_donors.append(donor)
+    return recipient, matching_donors
+
+
+# STEP 6: Check availability
+# 6.1 Calculate expiry date
 def calculate_expiry(donor):
     collection_date = date.fromisoformat(donor.collection_date)
     shelf_life = r.SHELF_LIFE[donor.component_type]
@@ -250,17 +268,17 @@ def calculate_expiry(donor):
 
     raise ValueError("Shelf life must specify days or months")
 
-# 4.2 Check expiry date
+# 6.2 Check expiry date
 def check_expiry(donor, request):
     required_date = date.fromisoformat(request.required_date)
     return required_date > calculate_expiry(donor)
 
-# 4.3 Check total units across available donor records
+# 6.3 Check total units across available donor records
 def check_units(available_donors, request):
     total_units = sum(donor.units for donor in available_donors)
     return total_units >= request.units
 
-# 4.4 Combine availability checks
+# 6.4 Combine availability checks
 def check_availability(request):
     if request.units <= 0:
         raise ValueError("Requested units must be greater than zero")
@@ -304,7 +322,6 @@ def display_matching(request):
     if not available_donors:
         st.error("No matching candidates available.")
         return
-
     if enough_units:
         st.success("Matching candidates found with sufficient stock.")
     else:
@@ -337,13 +354,11 @@ def display_inventory():
         return
 
     component_types = sorted({
-        donor.component_type for donor in donors
-    })
+        donor.component_type for donor in donors})
 
     selected_type = st.selectbox(
         "Choose blood component type",
-        component_types
-    )
+        component_types)
 
     today = date.today()
     rows = []
@@ -357,9 +372,8 @@ def display_inventory():
         positive_antigens = [
             antigen
             for antigen, result in donor.minor_blood.items()
-            if result == "Positive"
-        ]
-
+            if result == "Positive"]
+        
         if today > expiry_date:
             status = "Expired"
         elif donor.units <= 0:
@@ -369,14 +383,12 @@ def display_inventory():
         else:
             status = "Available"
 
-        rows.append({
-            "Component ID": donor.component_id,
-            "Donor ID": donor.id,
-            "ABO Rh": donor.major_blood,
-            "Positive Antigens": ", ".join(positive_antigens) or "None",
-            "Units": donor.units,
-            "Expiry Date": expiry_date,
-            "Status": status
-        })
+        rows.append({"Component ID": donor.component_id,
+                    "Donor ID": donor.id,
+                    "ABO Rh": donor.major_blood,
+                    "Positive Antigens": ", ".join(positive_antigens) or "None",
+                    "Units": donor.units,
+                    "Expiry Date": expiry_date,
+                    "Status": status})
 
     st.dataframe(rows, hide_index=True)

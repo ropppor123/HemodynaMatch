@@ -1,8 +1,8 @@
 ANTIBODY_TO_ANTIGEN = {
     "anti-K": "K",
     "anti-k": "k",
-    "anti-kpa": "Kpa",
-    "anti-kpb": "Kpb",
+    "anti-Kpa": "Kpa",
+    "anti-Kpb": "Kpb",
     "anti-Fya": "Fya",
     "anti-Fyb": "Fyb",
     "anti-Jka": "Jka",
