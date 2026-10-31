@@ -1,0 +1,72 @@
+[
+    {
+        "recipient_id": "R000002",
+        "request_date": "2026-10-29",
+        "required_date": "2026-10-29",
+        "component_type": "Packed Red Cell",
+        "emergency": "Immediate - Now",
+        "units": 1,
+        "diagnosis": "",
+        "status": "Pending"
+    },
+    {
+        "recipient_id": "R000002",
+        "request_date": "2026-10-29",
+        "required_date": "2026-10-29",
+        "component_type": "Packed Red Cell",
+        "emergency": "Immediate - Now",
+        "units": 1,
+        "diagnosis": "",
+        "status": "Pending"
+    },
+    {
+        "recipient_id": "R000002",
+        "request_date": "2026-10-28",
+        "required_date": "2026-10-30",
+        "component_type": "Washed Red Cell Leucocyte Depleted",
+        "emergency": "Urgent - within 10 minutes",
+        "units": 1,
+        "diagnosis": "",
+        "status": "Pending"
+    },
+    {
+        "recipient_id": "R000010",
+        "request_date": "2026-10-31",
+        "required_date": "2026-10-31",
+        "component_type": "Pooled Platelets",
+        "emergency": "Emergency within - 30-40 minutes",
+        "units": 1,
+        "diagnosis": "",
+        "status": "Pending"
+    },
+    {
+        "recipient_id": "R000010",
+        "request_date": "2026-10-31",
+        "required_date": "2026-10-31",
+        "component_type": "Red Cell Leucocyte Depleted",
+        "emergency": "Emergency within - 30-40 minutes",
+        "units": 1,
+        "diagnosis": "",
+        "status": "Pending"
+    },
+    {
+        "recipient_id": "R000010",
+        "request_date": "2026-10-31",
+        "required_date": "2026-10-31",
+        "component_type": "Packed Red Cell",
+        "emergency": "Urgent - within 10 minutes",
+        "units": 1,
+        "diagnosis": "",
+        "status": "Pending"
+    },
+    {
+        "recipient_id": "R000010",
+        "request_date": "2026-10-31",
+        "required_date": "2026-10-31",
+        "component_type": "Packed Red Cell",
+        "emergency": "Immediate - Now",
+        "units": 1,
+        "diagnosis": "",
+        "status": "Pending"
+    }
+]

@@ -1,0 +1,134 @@
+[
+    {
+        "id": "D000001",
+        "name": "A",
+        "age": 29,
+        "gender": "Female",
+        "underlying_disease": "",
+        "major_blood": "O-",
+        "minor_blood": {
+            "K": "Negative",
+            "k": "Negative",
+            "Kpa": "Negative",
+            "Kpb": "Negative",
+            "Fya": "Negative",
+            "Fyb": "Negative",
+            "Jka": "Negative",
+            "Jkb": "Negative"
+        },
+        "component_id": "PRC000009",
+        "component_type": "Packed Red Cell",
+        "units": 4,
+        "collection_date": "2026-10-26"
+    },
+    {
+        "id": "D000002",
+        "name": "B",
+        "age": 32,
+        "gender": "Male",
+        "underlying_disease": "",
+        "major_blood": "O+",
+        "minor_blood": {
+            "K": "Negative",
+            "k": "Negative",
+            "Kpa": "Negative",
+            "Kpb": "Negative",
+            "Fya": "Negative",
+            "Fyb": "Negative",
+            "Jka": "Negative",
+            "Jkb": "Negative"
+        },
+        "component_id": "CPP000029",
+        "component_type": "Cryoprecipitate",
+        "units": 2,
+        "collection_date": "2026-10-26"
+    },
+    {
+        "id": "D000003",
+        "name": "B",
+        "age": 41,
+        "gender": "Male",
+        "underlying_disease": "",
+        "major_blood": "O-",
+        "minor_blood": {
+            "K": "Negative",
+            "k": "Negative",
+            "Kpa": "Negative",
+            "Kpb": "Negative",
+            "Fya": "Negative",
+            "Fyb": "Negative",
+            "Jka": "Negative",
+            "Jkb": "Negative"
+        },
+        "component_id": "PRC000045",
+        "component_type": "Packed Red Cell",
+        "units": 1,
+        "collection_date": "2026-10-08"
+    },
+    {
+        "id": "D000004",
+        "name": "D",
+        "age": 25,
+        "gender": "Female",
+        "underlying_disease": "",
+        "major_blood": "O-",
+        "minor_blood": {
+            "K": "Negative",
+            "k": "Negative",
+            "Kpa": "Negative",
+            "Kpb": "Negative",
+            "Fya": "Negative",
+            "Fyb": "Negative",
+            "Jka": "Negative",
+            "Jkb": "Negative"
+        },
+        "component_id": "WRD000070",
+        "component_type": "Washed Red Cell Leucocyte Depleted",
+        "units": 3,
+        "collection_date": "2026-10-08"
+    },
+    {
+        "id": "D000008",
+        "name": "N",
+        "age": 30,
+        "gender": "Female",
+        "underlying_disease": "",
+        "major_blood": "A+",
+        "minor_blood": {
+            "K": "Negative",
+            "k": "Negative",
+            "Kpa": "Negative",
+            "Kpb": "Negative",
+            "Fya": "Negative",
+            "Fyb": "Negative",
+            "Jka": "Negative",
+            "Jkb": "Negative"
+        },
+        "component_id": "APL000023",
+        "component_type": "Apheresis Platelets",
+        "units": 1,
+        "collection_date": "2026-10-06"
+    },
+    {
+        "id": "D000009",
+        "name": "Z",
+        "age": 20,
+        "gender": "Female",
+        "underlying_disease": "",
+        "major_blood": "AB-",
+        "minor_blood": {
+            "anti-K": "Positive",
+            "anti-k": "Negative",
+            "anti-Kpa": "Negative",
+            "anti-Kpb": "Negative",
+            "anti-Fya": "Negative",
+            "anti-Fyb": "Positive",
+            "anti-Jka": "Positive",
+            "anti-Jkb": "Negative"
+        },
+        "component_id": "PRC000010",
+        "component_type": "Packed Red Cell",
+        "units": 1,
+        "collection_date": "2026-10-29"
+    }
+]

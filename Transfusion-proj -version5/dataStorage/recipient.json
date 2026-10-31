@@ -1,0 +1,40 @@
+[
+    {
+        "id": "R000002",
+        "name": "H",
+        "age": 22,
+        "gender": "Female",
+        "underlying_disease": "",
+        "major_blood": "O-",
+        "minor_blood": [
+            "anti-Fya",
+            "anti-k"
+        ],
+        "reaction_history": "No"
+    },
+    {
+        "id": "R000003",
+        "name": "K",
+        "age": 22,
+        "gender": "Female",
+        "underlying_disease": "",
+        "major_blood": "B+",
+        "minor_blood": [
+            "anti-k"
+        ],
+        "reaction_history": "No"
+    },
+    {
+        "id": "R000010",
+        "name": "L",
+        "age": 20,
+        "gender": "Female",
+        "underlying_disease": "",
+        "major_blood": "AB+",
+        "minor_blood": [
+            "anti-k",
+            "anti-Jkb"
+        ],
+        "reaction_history": "No"
+    }
+]
