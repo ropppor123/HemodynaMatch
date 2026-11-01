@@ -1,0 +1,23 @@
+[
+    {
+        "recipient_id": "R000003",
+        "request_date": "2026-11-01",
+        "required_date": "2026-11-01",
+        "component_type": "Apheresis Platelets",
+        "emergency": "Immediate - Now",
+        "units": 1,
+        "diagnosis": "",
+        "status": "Pending"
+    },
+    {
+        "recipient_id": "R000010",
+        "request_date": "2026-11-01",
+        "required_date": "2026-11-01",
+        "component_type": "Apheresis Platelets",
+        "emergency": "Immediate - Now",
+        "units": 1,
+        "diagnosis": "",
+        "status": "Issued",
+        "issued_units": 1
+    }
+]
