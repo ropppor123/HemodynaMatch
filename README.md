@@ -41,7 +41,7 @@ Select **Register Recipient** from the home page.
 | --- | --- |
 | Recipient ID | Uppercase R followed by six digits, such as `R000001`. |
 | Name | First and last name; whitespace-only input is rejected. |
-| Age | Integer from 18 to 120. |
+| Age | Integer from 0 to 120. |
 | Gender | Female or Male. |
 | Underlying disease | Existing conditions, separate from the request diagnosis. |
 | ABO and Rh group | `O-`, `O+`, `A-`, `A+`, `B-`, `B+`, `AB-` or `AB+`. |
