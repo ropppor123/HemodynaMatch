@@ -45,7 +45,10 @@ Select **Register Recipient** from the home page.
 | Gender | Female or Male. |
 | Underlying disease | Existing conditions, separate from the request diagnosis. |
 | ABO and Rh group | `O-`, `O+`, `A-`, `A+`, `B-`, `B+`, `AB-` or `AB+`. |
-| Minor Blood Group or Antibodies | Zero or more supported antibody labels. |
+| Minor Blood Group or Antibodies | Zero or more supported antibody labels. ("anti-K", "anti-k",
+                                "anti-Kpa", "anti-Kpb",
+                               "anti-Fya", "anti-Fyb",
+                                "anti-Jka", "anti-Jkb") |
 | Previous Transfusion reaction | No or Yes. |
 
 Click **Register New Recipient**. Duplicate recipient IDs are rejected. The latest supplied code does not collect an IAT result. Underlying disease and reaction history are stored but do not influence matching.
