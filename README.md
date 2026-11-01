@@ -139,7 +139,7 @@ The supported labels are `anti-K`, `anti-k`, `anti-Kpa`, `anti-Kpb`, `anti-Fya`,
 
 Recipient selections are stored as an antibody list. The donor form uses the same labels as a simplified simulation input: selected labels are stored as Positive for the corresponding antigen key, and unselected labels as Negative. There is no unknown state.
 
-For example, selecting donor `anti-K` produces `"K": "Positive"`. This is an explicit simulation convention, not a medical inference of antigen status from an antibody result.
+For example, selecting donor `anti-K` produces `"K": "Positive"`.
 
 For red-cell components, a donor is rejected if a recipient antibody maps to an antigen marked Positive in the donor record. This check runs for all red-cell urgency policies. Other component types bypass it.
 
