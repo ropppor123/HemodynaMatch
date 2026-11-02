@@ -368,7 +368,7 @@ def check_availability(request):
 
     return recipient, available_donors, enough_units
 
-# STEP 7
+# STEP 7 issue components
 def issue_component(request_index, component_id, units):
     requests = s.get_requests()
     request_data = requests[request_index]
